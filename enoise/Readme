@@ -1,0 +1,9 @@
+enoise-alpha-rel-v1.0
+Non-zero baseline VLBI data simulator
+
+Support different frequency gaps and reuse of data files.
+
+Prerequisite:
+DiFX-2.3.0, GNU Scientific Library (gsl, gsl-devel) and FFTW3 (fftw, fftw-devel)
+
+To compile, simply use command 'make'.

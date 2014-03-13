@@ -1,0 +1,22 @@
+station=SMA    ; id=SP ; site_position=-5464555.493 m : -2492927.989 m : 2150797.176 m
+station=SMA1   ; id=S1 ; site_position=-5464555.493 m : -2492927.989 m : 2150797.176 m
+station=SMA2   ; id=S2 ; site_position=-5464555.493 m : -2492927.989 m : 2150798.176 m
+station=SMA3   ; id=S3 ; site_position=-5464555.493 m : -2492927.989 m : 2150800.176 m
+station=AL1    ; id=AS ; site_position=-5464555.493 m : -2492927.989 m : 2150797.176 m
+station=ALMA   ; id=AL ; site_position=2225039.530 m : -5441197.629 m : -2479303.360 m
+station=SMTO   ; id=ST ; site_position=-1828796.200 m : -5054406.800 m : 3427865.200 m
+station=CARMA  ; id=CM ; site_position=-2397378.568 m : -4482048.670 m : 3843513.202 m
+station=IRAM30 ; id=IM ; site_position=5088967.900 m : -301681.600 m : 3825015.800 m
+station=CYK1   ; id=A1 ; site_position=5088967.900 m : -301681.600 m : 0.0 m
+station=CYK2   ; id=A2 ; site_position=5088967.900 m : -301681.600 m : 100.0 m
+station=CYK3   ; id=A3 ; site_position=5088967.900 m : -301681.600 m : 1000.0 m
+station=SC-VLBA; id=SC ; site_position=2607848.603 m : -5488069.582 m : 1932739.671 m
+station=SD-VLBA; id=SD ; site_position=2607848.603 m : -5488069.582 m : 0000000.000 m
+station=SE-VLBA; id=SE ; site_position=6376137.000 m : 0000000.000 m : 0000000.000 m
+station=SF-VLBA; id=SF ; site_position=0000000.000 m : 0000000.000 m : 6376137.000 m
+station=KA1    ; id=K1 ; site_position=1111165.000 m : 0000000.000 m : 6259543.000 m
+station=KA2    ; id=K2 ; site_position=0000000.000 m : 1111165.000 m : 6259543.000 m
+station=KT1    ; id=T1 ; site_position=10000.000 m : 0000000.000 m : 6259543.000 m
+station=KT2    ; id=T2 ; site_position=0000000.000 m : 10000.000 m : 6200000.000 m
+station=XT1    ; id=X1 ; site_position=197004.000 m : 0000000.000 m : 5353157.000 m
+station=XT2    ; id=X2 ; site_position=0000000.000 m : 10000.000 m : 6200000.000 m
