@@ -4,6 +4,7 @@ enoise-alpha-rel-v1.0
 <h2><em>enoise</em>: non-zero baseline (VLBI) data simulator</h2>
 
 <h5>Author: Zheng Meyer-Zhao</h5>
+<h5>Simulator design: Dr. C. Y. Kuo</h5>
 <h5>Date:   2014/03/13</h5>
 
 <p>Based on the <em>anoise</em> simulator developed by Geoff Crew,
