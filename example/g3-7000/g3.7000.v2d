@@ -1,0 +1,40 @@
+vex = g3.vex.obs
+mjdStart = 56001.248611111
+mjdStop  = 56001.248657407
+antennas = SP,CM,ST
+startSeries = 7000
+dataBufferFactor = 16
+visBufferLength = 80
+nDataSegments = 8
+
+SETUP default
+{
+   tInt = 0.8
+   # subintNS = 32000000
+   guardNS = 2000
+   FFTSpecRes = 0.00390625
+   specRes = 0.50
+   xmacLength = 1
+   strideLength = 1
+}
+
+ANTENNA SP
+{
+   file = SP.vdif
+   format = VDIF/544/2
+   phaseCalInt = 0
+}
+
+ANTENNA CM
+{
+   file = CM.vdif
+   format = VDIF/544/2
+   phaseCalInt = 0
+}
+
+ANTENNA ST
+{
+   file = ST.vdif
+   format = VDIF/544/2
+   phaseCalInt = 0
+}

@@ -1,0 +1,192 @@
+VEX_rev = 1.5;
+$GLOBAL;
+    ref $EXPER = AVzoom;
+    ref $EOP = EOP001;
+*-----------------------   end $GLOBAL             ----------------------*
+$EXPER;
+  def AVzoom;
+    exper_name = g3;
+    exper_num = 7000;
+    exper_description = AVzoom;
+    PI_name = GBC;
+    target_correlator = DiFX;
+  enddef;
+*-----------------------   end $EXPER              ----------------------*
+*----------------------- begin $MODE               ----------------------*
+$MODE;
+  def MINE;
+    * station SP
+    ref $FREQ = VDIF_544_2-FREQ:SP;
+    ref $BBC = VDIF_544_2-BBC:SP;
+    ref $IF = VDIF_544_2-IF:SP;
+    * station CM
+    ref $FREQ = VDIF_544_2-FREQ:CM;
+    ref $BBC = VDIF_544_2-BBC:CM;
+    ref $IF = VDIF_544_2-IF:CM;
+    * station ST
+    ref $FREQ = VDIF_544_2-FREQ:ST;
+    ref $BBC = VDIF_544_2-BBC:ST;
+    ref $IF = VDIF_544_2-IF:ST;
+  enddef;
+*-----------------------   end $MODE               ----------------------*
+*----------------------- begin $EOP                ----------------------*
+$EOP;
+ def EOP001;
+* TAI-UTC = 34 sec;
+  TAI-UTC = 35 sec;
+  A1-TAI = 0.0 sec;
+  eop_ref_epoch = 2012y075d00h00m;
+  * min of 5 are required, apparently
+  num_eop_points = 5;
+  eop_interval = 24 hr;
+  ut1-utc  = 0.0 sec  : 0.0 sec  : 0.0 sec  : 0.0 sec  : 0.0 sec  ;
+  x_wobble = 0.0 asec : 0.0 asec : 0.0 asec : 0.0 asec : 0.0 asec ;
+  y_wobble = 0.0 asec : 0.0 asec : 0.0 asec : 0.0 asec : 0.0 asec ;
+ enddef;
+*-----------------------   end $EOP                ----------------------*
+*----------------------- begin $CLOCK              ----------------------*
+$CLOCK;
+  def SP; clock_early = 2012y075d00h00m : 0 usec: 2012y075d00h00m : 0; enddef;
+  def CM; clock_early = 2012y075d00h00m : 0 usec: 2012y075d00h00m : 0; enddef;
+  def ST; clock_early = 2012y075d00h00m : 0 usec: 2012y075d00h00m : 0; enddef;
+*-----------------------   end $CLOCK             ----------------------*
+*----------------------- begin $STATION            ----------------------*
+$STATION;
+  def SP;
+    ref $SITE = SMA;
+    ref $ANTENNA = SMA;
+    ref $CLOCK = SMA;
+    ref $DAS = FakeDAS;
+    ref $TRACKS = FakeTRACKS;
+  enddef;
+  def CM;
+    ref $SITE = CARMA;
+    ref $ANTENNA = CARMA;
+    ref $CLOCK = CARMA;
+    ref $DAS = FakeDAS;
+    ref $TRACKS = FakeTRACKS;
+  enddef;
+  def ST;
+    ref $SITE = SMTO;
+    ref $ANTENNA = SMTO;
+    ref $CLOCK = SMTO;
+    ref $DAS = FakeDAS;
+    ref $TRACKS = FakeTRACKS;
+  enddef;
+*-----------------------   end $STATION            ----------------------*
+*----------------------- begin $ANTENNA            ----------------------*
+$ANTENNA;
+  def SMA;
+    antenna_diam =  10.00 m;
+    axis_type = az : el;
+    axis_offset = 0 m;
+    pointing_sector = &n : az : 0 deg : 360 deg : el : 0 deg : 90 deg;
+  enddef;
+  def CARMA;
+    antenna_diam =  10.00 m;
+    axis_type = az : el;
+    axis_offset = 0 m;
+    pointing_sector = &n : az : 0 deg : 360 deg : el : 0 deg : 90 deg;
+  enddef;
+  def SMTO;
+    antenna_diam =  10.00 m;
+    axis_type = az : el;
+    axis_offset = 0 m;
+    pointing_sector = &n : az : 0 deg : 360 deg : el : 0 deg : 90 deg;
+  enddef;
+*-----------------------   end $ANTENNA            ----------------------*
+*----------------------- begin $DAS                ----------------------*
+$DAS;
+  def FakeDAS;
+*   record_transport_type = VDIF;
+  enddef;
+*-----------------------   end $DAS                ----------------------*
+*----------------------- begin $TRACKS             ----------------------*
+$TRACKS;
+  def FakeTRACKS;
+*   bits_sample = 2;
+  enddef;
+*-----------------------   end $TRACKS             ----------------------*
+*----------------------- begin $BBC                ----------------------*
+$BBC;
+    def VDIF_544_2-BBC;
+			* vanilla_bbc
+		BBC_assign = &BBC01 : 01 : &IF_XR;
+    enddef;
+*-----------------------   end $BBC                ----------------------*
+*----------------------- begin $FREQ               ----------------------*
+$FREQ;
+    def VDIF_544_2-FREQ;
+      *
+	chan_def = &B : 230000.00 MHz: U : 32.0 MHz : &Ch01 : &BBC01 : &cp;  
+	sample_rate = 64.0 Ms/sec;
+    enddef;
+    def VDIF_544_2-FREQ;
+      *
+	chan_def = &B : 230000.00 MHz: U : 32.0 MHz : &Ch01 : &BBC01 : &cp;  
+	sample_rate = 64.0 Ms/sec;
+    enddef;
+    def VDIF_544_2-FREQ;
+      *
+	chan_def = &B : 230000.00 MHz: U : 32.0 MHz : &Ch01 : &BBC01 : &cp;  
+	sample_rate = 64.0 Ms/sec;
+    enddef;
+*-----------------------   end $FREQ               ----------------------*
+*----------------------- begin $IF                 ----------------------*
+$IF;
+    def VDIF_544_2-IF;
+			* vanilla_if
+		if_def = &IF_XR : XX : R : 230000.00 MHz : U : 0 MHz : 0 Hz;
+    enddef;
+*-----------------------   end $IF                 ----------------------*
+*-----------------------   begin $SCHED            ----------------------*
+$SCHED;
+* 2010y001d20h58m21.3503s 2010y001d20h58m25.3501s
+* i have no idea what the format of station is...
+  scan 075-0558;
+    start = 2012y075d05h58m00s;
+    mode = MINE;
+    * hopefully one of these is visible
+    source = M87;
+    * real time or 20, whichever is greater, no idea why.
+    station = SP : 0 sec : 20 sec : 0 ft : 1A : &n : 1;
+    * real time or 20, whichever is greater, no idea why.
+    station = CM : 0 sec : 20 sec : 0 ft : 1A : &n : 1;
+    * real time or 20, whichever is greater, no idea why.
+    station = ST : 0 sec : 20 sec : 0 ft : 1A : &n : 1;
+  endscan;
+*-----------------------   end $SCHED              ----------------------*
+*----------------------- begin $SITES              ----------------------*
+$SITE;
+* Westford antenna location
+  def SMA;
+    site_type = fixed;
+    site_name = SMA;
+    site_ID = SP;
+    site_position =  -5464555.493 m : -2492927.989 m : 2150797.176 m;
+  enddef;
+  def CARMA;
+    site_type = fixed;
+    site_name = CARMA;
+    site_ID = CM;
+    site_position =  -2397378.568 m : -4482048.670 m : 3843513.202 m;
+  enddef;
+  def SMTO;
+    site_type = fixed;
+    site_name = SMTO;
+    site_ID = ST;
+    site_position =  -1828796.200 m : -5054406.800 m : 3427865.200 m;
+  enddef;
+*-----------------------   end $SITES              ----------------------*
+*----------------------- begin $SOURCE             ----------------------*
+$SOURCE;
+* totally bogus source always visible at Westford
+  def M87;
+    source_type = galaxy;
+    source_name = M87;
+    IAU_name = 1230+123;
+    dec = 12d23'28.043000";
+    ra = 12h30m49.4233000s ;
+    ref_coord_frame = J2000;
+  enddef;
+*-----------------------   end $SOURCE             ----------------------*
